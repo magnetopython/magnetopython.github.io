@@ -1,8 +1,8 @@
 - title: Home
   href: index.html
 
-# - title: About
-#   href: about.html
+- title: Blog
+  href: https://www.cnblogs.com/anewpro-techshare/
 
 - title: Posts
   href: list/posts.html
