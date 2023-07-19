@@ -1,0 +1,18 @@
+- caption: ANewPro的Github主页
+  href: https://github.com/magnetopython
+  icon: entypo/github.svg
+
+- caption: Stack Overflow
+  href: https://stackoverflow.com
+  icon: icons/stackoverflow.svg
+
+- caption: Facebook
+  href: https://www.facebook.com
+  icon: entypo/facebook.svg
+
+- caption: Twitter
+  href: https://www.twitter.com
+  icon: entypo/twitter.svg
+
+
+
