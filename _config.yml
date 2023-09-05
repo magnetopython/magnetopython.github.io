@@ -72,4 +72,4 @@ defaults:
       show_profile: false
       layout: defaults/list
 
-
+markdown : kramdown

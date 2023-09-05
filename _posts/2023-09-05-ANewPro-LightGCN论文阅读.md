@@ -1,8 +1,8 @@
 ---
 title : LightGCN论文阅读
 tags:
-  - 机器学习
-  - 推荐系统
+  - Machine Learning
+  - Recommendation System
 ---
 
 # LightGCN阅读笔记
@@ -23,9 +23,9 @@ tags:
 
 ​	信息传递和聚合的规则为：
 
-​	$e_u^{k+1}=\sum_{i\in N_u}\frac{1}{\sqrt{|N_u|}\sqrt{|N_i|}}e_i^k$
+​	$$ e_u^{k+1}=\sum_{i\in N_u}\frac{1}{\sqrt{|N_u|}\sqrt{|N_i|}}e_i^k $$
 
-​	$e_i^{k+1}=\sum_{i\in N_i}\frac{1}{\sqrt{|N_u|}\sqrt{|N_i|}}e_u^k$
+​	$$ e_i^{k+1}=\sum_{i\in N_i}\frac{1}{\sqrt{|N_u|}\sqrt{|N_i|}}e_u^k $$
 
 在聚合的过程中，我们只聚合连接的邻居，而不聚合自己
 
@@ -55,10 +55,10 @@ $\hat{y}_{ui}=e_u^Te_i$
 
 用户和物品的邻接矩阵表示为
 
-$A=\begin{pmatrix}
+$$A=\begin{pmatrix}
   0&R \\
   R^T&0
-\end{pmatrix}$
+\end{pmatrix}$$
 
 R表示了用户与物品的关系，如果用户u和物品i有联系，则$R_{ui}=1$，否则为0
 

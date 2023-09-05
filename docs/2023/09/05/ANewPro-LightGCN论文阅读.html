@@ -10,7 +10,7 @@
 
     <title>
         
-        How to use Single Images &middot; ANewPro
+        LightGCN论文阅读 &middot; ANewPro
         
     </title>
 
@@ -97,7 +97,7 @@
     <div class="card bg-light mb-3">
         <div class="card-body">
             <div class="card-title">
-                <h5>13 Oct 2017</h5>
+                <h5>05 Sep 2023</h5>
             </div>
             <div class="d-flex flex-wrap align-items-center">
                 <span class="icon grey mr-2 mb-2">
@@ -120,24 +120,14 @@
 
                 </span>
                 
-                    <a href="/list/posts.html#friday-theme"
+                    <a href="/list/posts.html#machine-learning"
                        class="bg-white border rounded p-1 mr-2 mb-2 d-inline-block">
-                        Friday Theme
+                        Machine Learning
                     </a>
                 
-                    <a href="/list/posts.html#html"
+                    <a href="/list/posts.html#recommendation-system"
                        class="bg-white border rounded p-1 mr-2 mb-2 d-inline-block">
-                        HTML
-                    </a>
-                
-                    <a href="/list/posts.html#images"
-                       class="bg-white border rounded p-1 mr-2 mb-2 d-inline-block">
-                        images
-                    </a>
-                
-                    <a href="/list/posts.html#markdown"
-                       class="bg-white border rounded p-1 mr-2 mb-2 d-inline-block">
-                        Markdown
+                        Recommendation System
                     </a>
                 
             </div>
@@ -163,14 +153,14 @@
 
         </div>
         <div class="col-md-12 col-lg-8 col-xl-8 pb-4 content">
-            <h1 class="border border-top-0 border-right-0 border-left-0 mb-3 pb-2">How to use Single Images</h1>
+            <h1 class="border border-top-0 border-right-0 border-left-0 mb-3 pb-2">LightGCN论文阅读</h1>
 
 <div class="d-md-block d-lg-none">
     <div class="sticky-top space-before">
     <div class="card bg-light mb-3">
         <div class="card-body">
             <div class="card-title">
-                <h5>13 Oct 2017</h5>
+                <h5>05 Sep 2023</h5>
             </div>
             <div class="d-flex flex-wrap align-items-center">
                 <span class="icon grey mr-2 mb-2">
@@ -193,24 +183,14 @@
 
                 </span>
                 
-                    <a href="/list/posts.html#friday-theme"
+                    <a href="/list/posts.html#machine-learning"
                        class="bg-white border rounded p-1 mr-2 mb-2 d-inline-block">
-                        Friday Theme
+                        Machine Learning
                     </a>
                 
-                    <a href="/list/posts.html#html"
+                    <a href="/list/posts.html#recommendation-system"
                        class="bg-white border rounded p-1 mr-2 mb-2 d-inline-block">
-                        HTML
-                    </a>
-                
-                    <a href="/list/posts.html#images"
-                       class="bg-white border rounded p-1 mr-2 mb-2 d-inline-block">
-                        images
-                    </a>
-                
-                    <a href="/list/posts.html#markdown"
-                       class="bg-white border rounded p-1 mr-2 mb-2 d-inline-block">
-                        Markdown
+                        Recommendation System
                     </a>
                 
             </div>
@@ -233,31 +213,107 @@
 
 </div>
 
-<p>Here’s how to put a single image into a post, using a Bootstrap 4 card. This shows how to mingle Markdown with HTML, too.</p>
+<h1 id="lightgcn阅读笔记">LightGCN阅读笔记</h1>
 
-<!--more-->
+<p>​	现有的将GCN缺乏对GCN的消融分析，并且该论文发现特征变换和非线性激活对协同过滤一点用都没有，甚至增加了训练的难度并且降低了推荐的效果。</p>
 
-<p>The card allows a caption to be aligned with the photo, and the card classes contain a <code class="highlighter-rouge">card-img-top</code> that ensures the image is responsive within the grid.</p>
+<p>​	造成上面结果的原因是，GCN最初是应用于属性图上的节点分类，其中每个节点都有丰富的属性作为属性特征，而在协同过滤的用户-项目交互图中，每个节点只有一个独热编码的ID来描述，这个ID只能作为标识符，没有具体的语义。所以如果再执行多层非线性转换不仅不会带来任何好处，反而会增加模型训练的难度。</p>
 
-<div class="card mb-3">
-    <img class="card-img-top" src="https://drscdn.500px.org/photo/127767019/q%3D80_m%3D1500/v2?webp=true&amp;sig=dd1fa4580c459472969cd4992068922f311f12cf263cf08b39615cfc1812286b" />
-    <div class="card-body bg-light">
-        <div class="card-text">
-            The Peak District on a mosty morning.
-        </div>
-    </div>
-</div>
+<h2 id="lightgcn模型结构">LightGCN模型结构</h2>
 
-<p>The HTML source for this card is below, or of course you could look at the raw source for this file in the GitHub repo or on your disk after you have downloaded the repo. WHen looking at the source, you can see the Markdown mingled with the HTML.</p>
+<p>​	LightGCN的模型结构：</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card mb-3"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"card-img-top"</span> <span class="na">src=</span><span class="s">"https://drscdn.500px.org/photo/127767019/q%3D80_m%3D1500/v2?webp=true&amp;sig=dd1fa4580c459472969cd4992068922f311f12cf263cf08b39615cfc1812286b"</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-body bg-light"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-text"</span><span class="nt">&gt;</span>
-            The Peak District on a mosty morning.
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+<p>​	<a href="https://imgse.com/i/pPrrfZd"><img src="https://s1.ax1x.com/2023/09/05/pPrrfZd.png" alt="pPrrfZd.png" /></a></p>
+
+<p>​	LightGCN只包含GCN中最基本的组件，很大的简化了模型的设计，在LightGCN中，我们只采用简单的加权和聚合，不再使用特征变换和非线性激活</p>
+
+<p>​	信息传递和聚合的规则为：</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>​	$$ e_u^{k+1}=\sum_{i\in N_u}\frac{1}{\sqrt{</td>
+      <td>N_u</td>
+      <td>}\sqrt{</td>
+      <td>N_i</td>
+      <td>}}e_i^k $$</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>​	$$ e_i^{k+1}=\sum_{i\in N_i}\frac{1}{\sqrt{</td>
+      <td>N_u</td>
+      <td>}\sqrt{</td>
+      <td>N_i</td>
+      <td>}}e_u^k $$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>在聚合的过程中，我们只聚合连接的邻居，而不聚合自己</p>
+
+<p>在LightGCN中，唯一可以训练的参数是初始的embedding</p>
+
+<p>在经过K层LGC后，我们可以进一步结合在每一层获得的embedding，形成最终的表示。</p>
+
+<p>多层嵌入的结合规则为：</p>
+
+<p>$e_u=\sum_{k=0}^K\alpha_ke_u^k;e_i=\sum_{k=0}^K\alpha_ke_i^k$</p>
+
+<p>K为层数，$\alpha_k$表示第k层的权重，可以手动指定也可以作为训练参数</p>
+
+<p>​	结合在每一层的原因主要有三点</p>
+
+<ul>
+  <li>随着层数的增加，会出现过度平滑的问题，因此不能简单的使用最后一层</li>
+  <li>在不同层的嵌入捕捉到了不同的语义，所以结合起来将会更加全面</li>
+  <li>将不同层的embedding使用不同的加权结合起来，可以获得自链接的效果</li>
+</ul>
+
+<p>最终模型的预测定义为用户和项目最终表示的内积</p>
+
+<p>$\hat{y}_{ui}=e_u^Te_i$</p>
+
+<p>这个就被作为推荐生成的排名分数</p>
+
+<h2 id="lightgcn的矩阵表示">LightGCN的矩阵表示</h2>
+
+<p>用户和物品的邻接矩阵表示为</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+A=\begin{pmatrix}
+  0&R \\
+  R^T&0
+\end{pmatrix} %]]></script>
+
+<p>R表示了用户与物品的关系，如果用户u和物品i有联系，则$R_{ui}=1$，否则为0</p>
+
+<p>LGC的矩阵表示为</p>
+
+<p>$E^{k+1}=(D^{-\frac{1}{2}}AD^{-\frac{1}{2}})E^k$</p>
+
+<p>其中矩阵D为度矩阵，$D_{ii}$表示了第i个对象的度</p>
+
+<p>之所以使用$D^{-\frac{1}{2}}$是为了降低高度数的节点的影响，邻居节点的度数越高，对本节点的影响就越小</p>
+
+<p>最终的embedding矩阵为：</p>
+
+<p><a href="https://imgse.com/i/pPrsgf0"><img src="https://s1.ax1x.com/2023/09/05/pPrsgf0.png" alt="pPrsgf0.png" /></a></p>
+
+<p>其中$\tilde{A}=D^{-\frac{1}{2}}AD^{-\frac{1}{2}}$</p>
+
+<h2 id="模型训练">模型训练</h2>
+
+<p>该模型的损失函数为BPR损失函数</p>
+
+<p><a href="https://imgse.com/i/pPrsbfx"><img src="https://s1.ax1x.com/2023/09/05/pPrsbfx.png" alt="pPrsbfx.png" /></a></p>
+
+<iframe src="https://www.dropbox.com/scl/fi/2uxzxljq0jigbvouup6pp/LightGCN.pdf?rlkey=opi07e8mgdo84r9h2iyhpdvok&amp;raw=1" width="100%" height="600px"></iframe>
+
+<p>下载链接为：https://www.dropbox.com/scl/fi/2uxzxljq0jigbvouup6pp/LightGCN.pdf?rlkey=opi07e8mgdo84r9h2iyhpdvok&amp;dl=0</p>
 
 
 
